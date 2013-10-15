@@ -66,23 +66,19 @@
 
 - (void)batteryStateDidChange:(NSNotification *)notification {
 
+    [Logger writeLogWithMessage:[NSString stringWithFormat:@"Battery Level Changed: %.1f%%", self.currentBatteryLevel]];
     self.currentBatteryLevel = [[UIDevice currentDevice] batteryLevel]*100;
     self.batteryLabel.text = [NSString stringWithFormat:@"Battery: %.1f%%", self.currentBatteryLevel];
     
     NSLog(@"Battery State Changed: %.1f%%", self.currentBatteryLevel);
     
-    if ([[UIDevice currentDevice] batteryLevel] <= 0.11f) {
-        [Logger writeLogWithMessage:[NSString stringWithFormat:@"Battery Level Changed: %.1f%%", self.currentBatteryLevel]];
-        
-        if (!self.isTimerActive) {
-            
+    if ([[UIDevice currentDevice] batteryLevel] <= 0.11f && !self.isTimerActive) {
             self.isTimerActive = YES;
             [NSTimer scheduledTimerWithTimeInterval:60.0
                                              target:self
                                            selector:@selector(timer)
                                            userInfo:nil
                                             repeats:YES];
-        }
     }
 }
 

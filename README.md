@@ -1,4 +1,4 @@
 iphone-batterytester
 ====================
 
-iphone-batterytester
+iPhone Battery Tester

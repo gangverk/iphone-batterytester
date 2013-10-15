@@ -1,16 +1,16 @@
 //
 //  main.m
-//  BatteryTest
+//  BatteryTester
 //
-//  Created by Kevin Renskers on 14-08-12.
-//  Copyright (c) 2012 CNet. All rights reserved.
+//  Created by Luis Flores on 10/11/13.
+//  Copyright (c) 2013 Gangverk. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 #import "AppDelegate.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char * argv[])
 {
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));

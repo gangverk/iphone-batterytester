@@ -66,8 +66,9 @@
 
 - (void)batteryStateDidChange:(NSNotification *)notification {
 
-    [Logger writeLogWithMessage:[NSString stringWithFormat:@"Battery Level Changed: %.1f%%", self.currentBatteryLevel]];
     self.currentBatteryLevel = [[UIDevice currentDevice] batteryLevel]*100;
+    
+    [Logger writeLogWithMessage:[NSString stringWithFormat:@"Battery Level Changed: %.1f%%", self.currentBatteryLevel]];
     self.batteryLabel.text = [NSString stringWithFormat:@"Battery: %.1f%%", self.currentBatteryLevel];
     
     NSLog(@"Battery State Changed: %.1f%%", self.currentBatteryLevel);
